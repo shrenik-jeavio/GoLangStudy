@@ -1,0 +1,25 @@
+syntax = 'proto2';
+
+package example;
+
+enum CompanyType {
+  Private = 17;
+  Public = 18;
+  NonProfit = 19;
+};
+
+message Company {
+  required string Name = 1;
+  repeated Employee Employees = 2;
+  required CompanyType Type = 3;
+  optional group Address = 4 {
+    required string Country = 5;
+    required string City = 6;
+    optional string Street = 7;
+  }
+}
+
+message Employee {
+  required string Name = 1;
+  optional string SSN = 2;
+}
