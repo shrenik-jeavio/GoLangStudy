@@ -10,10 +10,10 @@ import (
 )
 
 func writePerson(w io.Writer, p *Person) {
-	fmt.Fprintln(w, "Person ID:", p.Id)
-	fmt.Fprintln(w, "  Name:", p.Name)
+	fmt.Fprintln(w, "Person ID:", *p.Id)
+	fmt.Fprintln(w, "  Name:", *p.Name)
 	if *p.Email != "" {
-		fmt.Fprintln(w, "  E-mail address:", p.Email)
+		fmt.Fprintln(w, "  E-mail address:", *p.Email)
 	}
 
 	/*for _, pn := range p.Phones {
